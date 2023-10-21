@@ -14,6 +14,7 @@ async def on_ready():
 
 @bot.command()
 async def time_bust(ctx, material):
+    """время разложения материалов"""
     if material == "пластик":
         await ctx.send(f"{material} разлогается от 6 месяцев до 700 лет")
     elif material == "стекло":
@@ -27,6 +28,7 @@ async def time_bust(ctx, material):
 
 @bot.command()
 async def foto_trash(ctx):
+    """фото случайной свалки"""
     files = os.listdir("images")
     rand_mem = random.choice(files)
     with open(f"images/{rand_mem}", 'rb') as file:
@@ -35,6 +37,7 @@ async def foto_trash(ctx):
 
 @bot.command()
 async def sort_trash(ctx):
+    """информация о сортировке мусора"""
     await ctx.send("Раздельный сбор мусора позволяет отделить перерабатываемые отходы от неперерабатываемых")
     await ctx.send("а также выделить отдельные типы отходов, пригодные для вторичного использования.")
     await ctx.send("отходы разделяются на:")
@@ -45,6 +48,7 @@ async def sort_trash(ctx):
 
 @bot.command()
 async def dang_trash(ctx, material):
+    """опасность мусора"""
     if material == "градусник":
         await ctx.send(f"{material} чрезвычайно опасен. Он оказывают наибольший вред окружающей среде и здоровью людей")
     elif material == "батарейка":
@@ -56,4 +60,4 @@ async def dang_trash(ctx, material):
     elif material == "кирпич":
         await ctx.send(f"{material} безопасный для экосистемы мусор, который самостоятельно разлагается естественным путем")
 
-bot.run("MTE1NTQ0MzI4ODA5NTA4MDQ3OA.Gds0n1.8imlzaMx54iGsLRbLsdF7BjzoRguF6ymd-LIm4")
+bot.run("token")
